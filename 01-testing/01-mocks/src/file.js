@@ -7,22 +7,25 @@ const DEFAULT_OPTION = {
 }
 
 class File{
-  static async csvToJson(filePath){
-    const content = await File.getFileContent(filePath)
+  static async csvToJSON(filePath){
+    // const content = await File.getFileContent(filePath)
 
-    return content
+    // return content
   }
 
 
-  static async getFileContent(filePath){
-    const filename = join(__dirname, filePath)
-    return (await readFile(filename)).toString("utf8")
-  }
+  // static async getFileContent(filePath){
+  //   const filename = join(__dirname, filePath)
+  //   return (await readFile(filename)).toString("utf8")
+  // }
 
 }
 
 
-(async () => {
-  const result = await File.csvToJson("./../mocks/threeItems-valid.csv")
-  console.log("result", result)
-})()
+// (async () => {
+//   const result = await File.csvToJSON("./../mocks/threeItems-valid.csv")
+//   console.log("result", result)
+// })()
+
+
+module.exports = File

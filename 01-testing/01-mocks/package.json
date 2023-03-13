@@ -1,0 +1,16 @@
+{
+  "name": "01-mocks",
+  "version": "1.0.0",
+  "description": "node v18",
+  "main": "index.js",
+  "scripts": {
+    "exec":"node src/file.js",
+    "test":"node index.test.js"
+  },
+  "engines":{
+    "node":"18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
