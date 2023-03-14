@@ -1,0 +1,4 @@
+nvm install 19 
+nvm list
+nvm use 18
+nvm alias default 18
