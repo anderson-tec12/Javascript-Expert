@@ -1,0 +1,1 @@
+{"processes":{"8b387ca0-4abe-4a80-9b23-b9815e393550":{"parent":"e130dd2a-447a-44df-a712-4b894114f24a","children":[]},"e130dd2a-447a-44df-a712-4b894114f24a":{"parent":null,"children":["8b387ca0-4abe-4a80-9b23-b9815e393550"]}},"files":{"/home/anderson/Dev/Javascript-Expert/01-testing/04-e2e-coverage/src/api.js":["8b387ca0-4abe-4a80-9b23-b9815e393550"]},"externalIds":{}}

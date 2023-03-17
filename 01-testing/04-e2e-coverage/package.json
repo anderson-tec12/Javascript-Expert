@@ -1,0 +1,30 @@
+{
+  "name": "04-e2e-coverage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "npx mocha -w src/*.test.js",
+    "test": "npx mocha src/*.test.js",
+    "test:cov": "npx nyc npx mocha src/*.test.js",
+    "start": "node src/api.js",
+    "get": "curl localhost:3000",
+    "post": "curl -X POST localhost:3000",
+    "patch": "curl -X PATCH localhost:3000",
+    "put": "curl -X PUT localhost:3000",
+    "del": "curl -X DELETE localhost:3000",
+    "contact": "curl  localhost:3000/contact",
+    "not": "curl  localhost:3000/cntact"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "18"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.3.3"
+  }
+}
