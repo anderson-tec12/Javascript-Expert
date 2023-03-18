@@ -1,1 +1,23 @@
-[{"id":"b80e0e21-51e3-471c-85e9-080a29143aa5","name":"Fiesta","releaseYear":2023,"available":true,"gasAvailable":true},{"id":"841e7d23-11ef-4711-9542-131e66702567","name":"El Camino","releaseYear":2022,"available":true,"gasAvailable":true},{"id":"094dcdf6-f02c-4979-9cce-1ae9f27b4029","name":"Cruze","releaseYear":2023,"available":true,"gasAvailable":true}]
+[
+  {
+    "id": "b80e0e21-51e3-471c-85e9-080a29143aa5",
+    "name": "Fiesta",
+    "releaseYear": 2023,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "841e7d23-11ef-4711-9542-131e66702567",
+    "name": "El Camino",
+    "releaseYear": 2022,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "094dcdf6-f02c-4979-9cce-1ae9f27b4029",
+    "name": "Cruze",
+    "releaseYear": 2023,
+    "available": true,
+    "gasAvailable": true
+  }
+]

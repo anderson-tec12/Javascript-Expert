@@ -1,1 +1,17 @@
-[{"id":"0c718b31-13c6-4dd7-a6e1-f9a18b1484e9","name":"Glenda Champlin","age":40},{"id":"822ae0f1-e55b-43c0-a964-7378e69abb30","name":"Kyle Armstrong","age":29},{"id":"e72b4552-26dc-4e49-9a75-3e1f7ae3b6e8","name":"Lela Rodriguez","age":45}]
+[
+  {
+    "id": "0c718b31-13c6-4dd7-a6e1-f9a18b1484e9",
+    "name": "Glenda Champlin",
+    "age": 40
+  },
+  {
+    "id": "822ae0f1-e55b-43c0-a964-7378e69abb30",
+    "name": "Kyle Armstrong",
+    "age": 29
+  },
+  {
+    "id": "e72b4552-26dc-4e49-9a75-3e1f7ae3b6e8",
+    "name": "Lela Rodriguez",
+    "age": 45
+  }
+]

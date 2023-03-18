@@ -10,6 +10,8 @@ class BaseRepository{
 
     if(!itemId) return content 
 
-    return ConstantSourceNode.find(({id} )=> id === itemId)
+    return content.find(({id} )=> id === itemId)
   }
 }
+
+module.exports = BaseRepository
