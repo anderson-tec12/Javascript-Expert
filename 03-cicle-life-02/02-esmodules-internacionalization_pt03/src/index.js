@@ -1,8 +1,9 @@
 import database from '../database.json'
 import TerminalController from './terminalController.js'
 import Person from './person.js'
+import {save} from './repository.js'
 
-// 1 C3,CORSA 10000 2023-03-01 2023-03-15
+// 2 C3,CORSA 10000 2023-02-01 2023-03-1
 
 const DEFAULT_LANG = "pt-BR"
 const STOP_TERM = ":q"
@@ -23,7 +24,7 @@ async function mainLoop(){
     const person = Person.generateInstanceFromString(answer)
     terminalController.updateTable(person.formatted(DEFAULT_LANG))
     // console.log(person.formatted(DEFAULT_LANG))
-
+     await save(person)
     return mainLoop()
   }catch(error){
     console.error('Deu Ruim', error)
