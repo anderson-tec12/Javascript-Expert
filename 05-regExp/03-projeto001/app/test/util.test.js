@@ -21,4 +21,6 @@ describe('Util', () => {
     expect(() => evaluateRegex(safeRegex)).to.not.Throw
     expect(evaluateRegex(safeRegex)).to.be.ok
   })
+
+
 })

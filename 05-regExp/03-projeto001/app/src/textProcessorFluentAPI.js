@@ -1,3 +1,5 @@
+const {evaluateRegex} = require('./util.js')
+
 // O objetivo do Fluent API é executar tarefas 
 // como um pipeline, step by step
 
@@ -24,7 +26,7 @@ class TextProcessorFluentAPI{
         // m -> multiline
         // i -> insensitive
 
-    const matchPerson = /(?<=[contratante|contratada]:\s{1})(?!\s)(.*\n.*?)$/gmi
+    const matchPerson = evaluateRegex(/(?<=[contratante|contratada]:\s{1})(?!\s)(.*\n.*?)$/gmi)
     const onlyPerson = this.#content.match(matchPerson)
 
     console.log({onlyPerson})
@@ -32,6 +34,21 @@ class TextProcessorFluentAPI{
     this.#content = onlyPerson
     return this
   }
+
+  divideTextInColumns(){
+    const splitRegex = evaluateRegex(/,/)
+    this.#content = this.#content.map(line => line.split(splitRegex))
+
+    return this 
+  }
+
+ 
+removeEmptyCharacters() {
+    const trimSpaces = evaluateRegex(/^\s+|\s+$|\n/g)
+    this.#content = this.#content.map(line => line.map(item => item.replace(trimSpaces, "")))
+    
+    return this
+}
 
 
   build(){
