@@ -10,4 +10,4 @@
   
   CREATE TABLE warriors(id serial PRIMARY KEY, name VARCHAR(255) NOT NULL);
 
-  npm i knex pg
+  npm i knex pg mongodb
