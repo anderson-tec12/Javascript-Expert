@@ -3,11 +3,15 @@ import MongoDBStrategy from './src/strategies/mongoDBStrategy.js'
 import PostgresStrategy from './src/strategies/postgresStrategy.js'
 
 
-const postgreStrategy = new ContextStrategy(new PostgresStrategy())
+const postgresConnectionString = "postgres://abs:senha001@localhost:5432/heroes"
+
+const postgreContext = new ContextStrategy(new PostgresStrategy(postgresConnectionString))
+
 const mongoDBStrategy = new ContextStrategy(new MongoDBStrategy())
 
 
-postgreStrategy.connect()
+const result = await postgreContext.connect()
+console.log({result})
 
 const data = [
   {
@@ -19,3 +23,7 @@ const data = [
     type:'activityLog'
   }
 ]
+
+
+await postgreContext.create({name:data[0].name})
+console.log(await postgreContext.read())

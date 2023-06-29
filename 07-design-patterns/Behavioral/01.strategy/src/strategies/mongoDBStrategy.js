@@ -4,15 +4,15 @@ export default class MongoDBStrategy{
     this.dbStrategy = dbStrategy
   }
 
-  connect(){
+  async connect(){
    
   }
 
-  create(item){
+  async create(item){
     
   }
 
-  read(item){
+  async read(item){
     
   }
 

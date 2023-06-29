@@ -4,15 +4,15 @@ export default class ContextStrategy{
     this.dbStrategy = dbStrategy
   }
 
-  connect(){
+  async connect(){
     return this.dbStrategy.connect()
   }
 
-  create(item){
+  async create(item){
     return this.dbStrategy.create(item)
   }
 
-  read(item){
+  async read(item){
     return this.dbStrategy.read(item)
   }
 
