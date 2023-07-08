@@ -1,5 +1,7 @@
 import {expect, describe,test,jest, beforeAll} from '@jest/globals'
 import PaymentSubject from '../src/subjects/paymentSubject.js'
+import Shipment from '../src/observers/shipment.js'
+import Marketing from '../src/observers/marketing.js'
 
 describe('Test Suite for Observer Pattern', () => {
     beforeAll(() => {
@@ -52,5 +54,23 @@ describe('Test Suite for Observer Pattern', () => {
 
     })
     
-    test.todo('#All should notify subscribers after a crdit card payment')
+    test('#All should notify subscribers after a crdit card payment', () => {
+        const subject = new PaymentSubject()
+        const shipment = new Shipment()
+        const marketing = new Marketing()
+
+
+        const shipmentSpy = jest.spyOn(shipment, shipment.update.name)
+        const marketingSpy = jest.spyOn(shipment, marketing.update.name)
+
+        subject.subscribe(shipment)
+        subject.subscribe(marketing)
+
+        const payment = new Payment(subject)
+        const data = {userName:'Anderson B. Silva', id:Date.now()}
+
+        payment.creditCard(data)
+        expect(shipmentSpy).toBeCalledWith(data)        
+        expect(marketingSpy).toBeCalledWith(data)        
+    })
 })
