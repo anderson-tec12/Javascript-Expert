@@ -1,5 +1,6 @@
 import {expect, describe,test,jest, beforeAll} from '@jest/globals'
 import PaymentSubject from '../src/subjects/paymentSubject.js'
+import Payment from '../src/events/payment.js'
 import Shipment from '../src/observers/shipment.js'
 import Marketing from '../src/observers/marketing.js'
 
