@@ -1,8 +1,12 @@
-import {expect, describe, test, jest} from '@jest/globals'
+import {expect, describe, test, jest, beforeEach} from '@jest/globals'
 import BaseBusiness from '../src/business/base/baseBusiness.js'
 import { NotImplementedException } from '../src/util/exceptions.js'
 
 describe('#BaseBusiness', () => {
+    beforeEach(() => {
+        jest.restoreAllMocks()
+    })
+
     test('should throw an error when child class doenst implement _validadeRequiredFields function', () => {
         class ConcreteClass extends BaseBusiness{}
         const concreteClass = new ConcreteClass()
@@ -29,6 +33,44 @@ describe('#BaseBusiness', () => {
 
     })
 
-    test.todo('should throw an error when child class doenst implement _create function')
-    test.todo('should call  _create and _validadeRequiredFields on create')
+    test('should throw an error when child class doenst implement _create function', () => {
+        const VALIDATION_SUCCEEDED = true
+
+        class ConcreteClass extends BaseBusiness{
+            _validadeRequiredFields = jest.fn().mockReturnValue(VALIDATION_SUCCEEDED)
+        }
+
+        const concreteClass = new ConcreteClass()
+
+        const validationError = new NotImplementedException(
+            concreteClass._create.name
+        )
+
+        expect(() => concreteClass.create({})).toThrow(validationError)
+
+    })
+
+    test('should call  _create and _validadeRequiredFields on create', () => {
+        const VALIDATION_SUCCEEDED = true
+        const CREATE_SUCCEEDED = true
+
+        class ConcreteClass extends BaseBusiness{
+            _validadeRequiredFields = jest.fn().mockReturnValue(VALIDATION_SUCCEEDED)
+            _create = jest.fn().mockReturnValue(CREATE_SUCCEEDED)
+        }
+
+        const concreteClass = new ConcreteClass()
+
+        const createFromBaseClass = jest.spyOn(
+            BaseBusiness.prototype,
+            BaseBusiness.prototype.create.name
+        )
+
+        const result = concreteClass.create({})
+
+        expect(result).toBeTruthy()
+        expect(createFromBaseClass).toHaveBeenCalled()
+        expect(concreteClass._create).toHaveBeenCalled()
+        expect(concreteClass._validadeRequiredFields).toHaveBeenCalled()
+    })
 })
